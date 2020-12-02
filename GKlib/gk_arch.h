@@ -32,8 +32,8 @@
 
 
 #ifdef __MSC__ 
-  #include "ms_stdint.h"
-  #include "ms_inttypes.h"
+  #include <stdint.h>
+  #include <inttypes.h>
   #include "ms_stat.h"
 #else
 #ifndef SUNOS
@@ -58,7 +58,7 @@ typedef ptrdiff_t ssize_t;
 #define PTRDIFF_MAX  INT64_MAX
 #endif
 
-#ifdef __MSC__
+#if defined(__MSC__) && (_MSC_VER < 1900)
 /* MSC does not have rint() function */
 #define rint(x) ((int)((x)+0.5))  
 

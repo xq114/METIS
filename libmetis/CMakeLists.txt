@@ -9,8 +9,9 @@ if(UNIX)
 endif()
 
 if(METIS_INSTALL)
-  install(TARGETS metis
+  install(TARGETS metis EXPORT metisTargets
     LIBRARY DESTINATION lib
-    RUNTIME DESTINATION lib
-    ARCHIVE DESTINATION lib)
+    RUNTIME DESTINATION bin
+    ARCHIVE DESTINATION lib
+    INCLUDES DESTINATION include)
 endif()
